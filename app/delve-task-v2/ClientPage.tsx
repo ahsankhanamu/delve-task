@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import { useClickOutside } from "@/lib/hooks";
 import DropdownToggleButton from "@/components/DropdownToggleButton";
-import DropdownPanelContent from "../../components/content/DropdownPanelContent";
+import DropdownPanelContent from "../../components/content/DropdownPanelContentV2";
 import DropdownPanel from "@/components/DropDownPanel";
 import ButtonSlide from "@/components/ButtonSlide";
 

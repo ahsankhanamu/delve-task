@@ -1,1 +1,6 @@
-// No global types for now
+type User = {
+  id: string;
+  name: string;
+  image: string;
+  isOnline: boolean;
+};
