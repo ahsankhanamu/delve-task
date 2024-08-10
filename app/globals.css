@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  --line-color: #e5e7eb;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes react-loading-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.react-loading-skeleton {
+  --base-color: #939393;
+  --base-second-color: #000000;
+  --highlight-color: #262626;
+  --animation-duration: 3.5s;
+  --animation-direction: normal;
+  --pseudo-element-display: block; /* Enable animation */
+
+  background-color: var(--base-color);
+
+  width: 100%;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  line-height: 1;
+
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+}
+
+.react-loading-skeleton::before {
+  content: " ";
+  display: var(--pseudo-element-display);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    var(--base-color),
+    var(--base-second-color),
+    var(--highlight-color),
+    var(--base-second-color),
+    var(--base-color)
+  );
+  transform: translateX(-100%);
+
+  animation-name: react-loading-skeleton;
+  animation-direction: var(--animation-direction);
+  animation-duration: var(--animation-duration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .react-loading-skeleton {
+    --pseudo-element-display: none; /* Disable animation */
+  }
+}
+
+.maskChevronRight {
+  -webkit-mask-image: url("/icons-svg/arrow-dots-icon.svg");
+  mask-image: url("/icons-svg/arrow-dots-icon.svg");
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  mask-position: center;
+  mask-size: 2rem;
+}
